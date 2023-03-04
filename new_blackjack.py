@@ -39,7 +39,7 @@ def show_hands(player_hand, dealer_hand, hide_dealer_card):
     player_hand_str = ', '.join(card['value'] + ' of ' + card['suit'] for card in player_hand)
     dealer_hand_str = dealer_hand[0]['value'] + ' of ' + dealer_hand[0]['suit'] + ', ???' if hide_dealer_card else ', '.join(card['value'] + ' of ' + card['suit'] for card in dealer_hand)
 
-    print("Player Hand: ", end='')
+    print("\nPlayer Hand: ", end='')
     for letter in player_hand_str:
         print(letter, end='', flush=True)
         time.sleep(0.05)
@@ -53,7 +53,7 @@ def show_hands(player_hand, dealer_hand, hide_dealer_card):
 
 def get_player_choice():
     while True:
-        choice = input("Would you like to Hit or Stay? ").lower()
+        choice = input("\nWould you like to Hit or Stay? ").lower()
         if choice in ['hit', 'h', 'stay', 's']:
             return choice
         print("Invalid choice. Please try again.")
@@ -63,7 +63,7 @@ def play_again():
         choice = input("\nWould you like to play again? (y/n) ").lower()
         if choice in ['y', 'n']:
             return choice == 'y'
-        print("Invalid choice. Please try again.")
+        print("\nInvalid choice. Please try again.")
 
 def blackjack():
     player_balance = 100
